@@ -43,7 +43,6 @@
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
-| send          | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -61,7 +60,6 @@
 | address        | string     | null: false,                   |
 | building       | string     |                                |
 | phone_number   | string     | null: false,                   |
-| item_id        | integer    | null: false,                   |
 | destination    | references | null: false, foreign_key: true |
 
 ### Association
