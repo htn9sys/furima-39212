@@ -41,7 +41,6 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| purchase_date | date       |                                |
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
 | send          | references | null: false, foreign_key: true |
