@@ -16,20 +16,20 @@
 ### Association
 
 - has_many :items
-- has_many :destination
+- has_many :destinations
 
 ## items テーブル
 
 | Column                   | Type       | Options                        |
 | ------------------------ | ---------- | ------------------------------ |
 | name                     | string     | null: false,                   |
-| category_id[:genre_id]   | integer    | null: false,                   |
-| condition_id[:genre_id]  | integer    | null: false,                   |
-| postage_id[:genre_id]    | integer    | null: false,                   |
-| sender_id[:genre_id]     | integer    | null: false,                   |
-| prefecture_id[:genre_id] | integer    | null: false,                   |
+| category_id              | integer    | null: false,                   |
+| condition_id             | integer    | null: false,                   |
+| postage_id               | integer    | null: false,                   |
+| sender_id                | integer    | null: false,                   |
+| prefecture_id            | integer    | null: false,                   |
 | explanation              | text       | null: false,                   |
-| user_id                  | references | null: false, foreign_key: true |
+| user                     | references | null: false, foreign_key: true |
 | price                    | integer    | null: false,                   |
 
 ### Association
@@ -42,17 +42,17 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | purchase_date | date       |                                |
-| user_id       | references | null: false, foreign_key: true |
-| item_id       | references | null: false, foreign_key: true |
-| send_id       | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
+| item          | references | null: false, foreign_key: true |
+| send          | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :send
+- has_one :send
 
-## sends テーブル
+## addresses テーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
@@ -62,9 +62,9 @@
 | address        | string     | null: false,                   |
 | building       | string     |                                |
 | phone_number   | string     | null: false,                   |
-| item_id        | references | null: false, foreign_key: true |
-| destination_id | references | null: false, foreign_key: true |
+| item_id        | integer    | null: false,                   |
+| destination    | references | null: false, foreign_key: true |
 
 ### Association
 
-- has_one :destination
+- belongs_to :destination
