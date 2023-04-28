@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Furima39212
   class Application < Rails::Application
+    config.i18n.locale = :ja
+    config.i18n.fallbacks = [:en]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
@@ -17,3 +19,5 @@ module Furima39212
     # the framework and any gems in your application.
   end
 end
+
+
