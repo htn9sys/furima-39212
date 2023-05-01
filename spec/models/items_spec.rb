@@ -38,6 +38,42 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
 
+      it 'explanationが空では登録できない' do
+        @item.explanation = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Explanation can't be blank")
+      end
+
+      it 'category_idが空では登録できない' do
+        @item.category_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category can't be blank")
+      end
+
+      it 'condition_ideが空では登録できない' do
+        @item.condition_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Condition can't be blank")
+      end
+
+      it 'postage_idが空では登録できない' do
+        @item.postage_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Postage can't be blank")
+      end
+
+      it 'prefecture_idが空では登録できない' do
+        @item.prefecture_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+      end
+
+      it 'sender_idが空では登録できない' do
+        @item.sender_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Sender can't be blank")
+      end
+
       it 'category_idの選択肢が1では登録できない' do
         @item.category_id = 1
         @item.valid?
