@@ -12,12 +12,12 @@ class User < ApplicationRecord
   end
 
   validates :family_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width katakana characters" }
-  validates :given_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width katakana characters" }
+  validates :given_name_kana,  presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width katakana characters" }
 
   validates :birthday,         presence: true
 
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}\z/i, message: "is invalid. Include both letters and numbers" }
 
-  # has_many :items
+  has_many :items
   # has_many :destinations
 end

@@ -33,3 +33,8 @@ en:
   faker:
     name:
       last: "{{last_name}}"
+
+en:
+  errors:
+    messages:
+      not_a_number: "is invalid. Input half-width characters"
