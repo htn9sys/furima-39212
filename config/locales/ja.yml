@@ -35,7 +35,7 @@ ja:
         given_name: "氏名"
         family_name_kana: "名字（カタカナ）"
         given_name_kana: "氏名（カタカナ）"
-        birthday: "生年月日"
+        birth_date: "生年月日"
       item:
         image: "ファイル"
         name: "商品名"

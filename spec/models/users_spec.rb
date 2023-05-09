@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context '正常系' do
-      it 'nickname、email、password、password_confirmation、family_name、given_name、family_name_kana、given_name_kana、birthdayが存在すれば登録できる' do
+      it 'nickname、email、password、password_confirmation、family_name、given_name、family_name_kana、given_name_kana、birth_dateが存在すれば登録できる' do
         expect(@user).to be_valid
       end
     end
@@ -54,10 +54,10 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Given name kana can't be blank")
       end
-      it 'birthdayが空では登録できない' do
-        @user.birthday = ''
+      it 'birth_dateが空では登録できない' do
+        @user.birth_date = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Birthday can't be blank")
+        expect(@user.errors.full_messages).to include("Birth date can't be blank")
       end
       it 'nicknameが40文字以上では登録できない' do
         @user = FactoryBot.build(:user, nickname: Faker::Lorem.characters(number: 41))

@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :family_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: "が無効です。全角カタカナで入力してください" }
   validates :given_name_kana,  presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: "が無効です。全角カタカナで入力してください" }
 
-  validates :birthday,         presence: true
+  validates :birth_date,         presence: true
 
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}\z/i, message: "が無効です。文字と数字の両方を含めてください"}
 
