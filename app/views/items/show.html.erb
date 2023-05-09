@@ -32,10 +32,6 @@
           <%= link_to "購入画面に進む", item_orders_path(item_id: @item.id, action: :index), class: "item-red-btn" %>
         <% end %>
       <% end %>
-    <% else %>
-      <% unless @item.order.present? %>
-        <%= link_to "購入画面に進む", item_orders_path(@item), method: :get, class: "item-red-btn" %>
-      <% end %>
     <% end %>
     <div class="item-explain-box">
       <span><%= @item.explanation %></span>
