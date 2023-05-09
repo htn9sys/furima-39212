@@ -2,3 +2,56 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+
+ja:
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      inclusion: "は一覧にありません"
+      exclusion: "は既に存在しています"
+      invalid: "が無効です"
+      confirmation: "が一致しません"
+      empty: "を入力してください"
+      blank: "は必須項目です"
+      too_long: "は%{count}文字以内で入力してください"
+      too_short: "は%{count}文字以上で入力してください"
+      wrong_length: "は%{count}文字で入力してください"
+      not_a_number: "は数値での入力が必要です"
+      not_an_integer: "は整数での入力が必要です"
+      greater_than: "は%{count}より大きくなければなりません"
+      greater_than_or_equal_to: "は%{count}以上でなければなりません"
+      equal_to: "は%{count}と等しくなければなりません"
+      less_than: "は%{count}より小さくなければなりません"
+      less_than_or_equal_to: "は%{count}以下でなければなりません"
+  activerecord:
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
+        current_password: "現在のパスワード"
+        nickname: "ニックネーム"
+        family_name: "名字"
+        given_name: "氏名"
+        family_name_kana: "名字（カタカナ）"
+        given_name_kana: "氏名（カタカナ）"
+        birthday: "生年月日"
+      item:
+        image: "ファイル"
+        name: "商品名"
+        explanation: "商品の説明"
+        category_id: "カテゴリー"
+        condition_id: "商品の状態"
+        postage_id: "配送料の負担"
+        prefecture_id: "配送先の地域"
+        sender_id: "配送までの日数"
+        price: "価格"
+  activemodel:
+    attributes:
+      order_address:
+        token: "カード情報"
+        post_code: "郵便番号"
+        prefecture_id: "都道府県"
+        municipality: "市町村"
+        address: "番地"
+        phone_number: "電話番号もしくは携帯番号"

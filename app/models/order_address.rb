@@ -8,11 +8,11 @@ class OrderAddress
     validates :user_id
     validates :item_id
     validates :token
-    validates :post_code,     format: { with: /\A\d{3}[-]\d{4}\z/, message:"is invalid. Enter it as follows (e.g. 123-4567)"}
-    validates :prefecture_id, numericality: { other_than: 1, message: "is invalid" }
+    validates :post_code,     format: { with: /\A\d{3}[-]\d{4}\z/, message:"が無効です。次のように入力してください(例: 123-4567)"}
+    validates :prefecture_id, numericality: { other_than: 1, message: "が無効です" }
     validates :municipality
     validates :address
-    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "is invalid. Input only number" }, length: { minimum: 10, message: "is too short" }
+    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "が無効です。数字で入力してください" }, length: { minimum: 10, message: "が10文字以下です" }
   end
 
   def save

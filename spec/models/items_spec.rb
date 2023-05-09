@@ -77,31 +77,31 @@ RSpec.describe Item, type: :model do
       it 'category_idの選択肢が1では登録できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category is invalid")
+        expect(@item.errors.full_messages).to include("Category が無効です")
       end
 
       it 'condition_idの選択肢が1では登録できない' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition is invalid")
+        expect(@item.errors.full_messages).to include("Condition が無効です")
       end
 
       it 'postage_idの選択肢が1では登録できない' do
         @item.postage_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Postage is invalid")
+        expect(@item.errors.full_messages).to include("Postage が無効です")
       end
 
       it 'prefecture_idの選択肢が1では登録できない' do
         @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture is invalid")
+        expect(@item.errors.full_messages).to include("Prefecture が無効です")
       end
 
       it 'sender_idの選択肢が1では登録できない' do
         @item.sender_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Sender is invalid")
+        expect(@item.errors.full_messages).to include("Sender が無効です")
       end
 
       it 'priceが300以下では登録できない' do
@@ -119,7 +119,7 @@ RSpec.describe Item, type: :model do
       it 'priceが半角数字以外では登録できない' do
         @item.price = 'abc','４５６'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters")
+        expect(@item.errors.full_messages).to include("Price can't be blank", "Price is invalid. Input half-width characters")
       end
     end
   end
