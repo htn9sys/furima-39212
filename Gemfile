@@ -61,7 +61,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 1.5', '>= 1.5.3'
   gem 'unicorn', '5.4.1'
 end
 
