@@ -2,10 +2,10 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
-
-ja:
   date:
-    order:
+    formats:
+      default: "%Y/%m/%d"
+    user:
       - :year
       - :month
       - :day
@@ -33,10 +33,6 @@ ja:
   activerecord:
     attributes:
       user:
-        email: "メールアドレス"
-        password: "パスワード"
-        password_confirmation: "パスワード（確認）"
-        current_password: "現在のパスワード"
         nickname: "ニックネーム"
         family_name: "名字"
         given_name: "氏名"
