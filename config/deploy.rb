@@ -10,6 +10,11 @@ set :repo_url,  'git@github.com:htn9sys/furima-39212.git'
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
+# rake assets:precompile コマンドを実行中に date-3.3.3を見つけることができなかった為、お試しで入力
+set :bundle_flags, '--quiet'
+set :bundle_jobs, 4
+set :bundle_without, %w{development test}.join(' ')
+
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.5' #カリキュラム通りに進めた場合、’2.6.5’ です
 
