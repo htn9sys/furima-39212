@@ -1,3 +1,16 @@
+# bundle installが自動的に実行されるための対策_テスト
+before "deploy:assets:precompile", "deploy:yarn_install"
+namespace :deploy do
+  desc 'Run rake yarn:install'
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+        execute("cd #{release_path} && yarn install --silent --no-progress --check-files --production")
+      end
+    end
+  end
+end
+
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
 lock '3.17.2'
 
